@@ -2,6 +2,7 @@ Summary:	Utilities for manipulating Macintosh file formats
 Summary(de):	Dienstprogramme zum Bearbeiten von Macintosh-Dateiformaten
 Summary(es):	Utilitarios para manipulación de archivos en formato MacIntosh (Apple)
 Summary(fr):	Utilitaires pour manipuler les fichiers au format Macintosh
+Summary(ja):	Macintosh ¤Î¥Õ¥¡¥¤¥ë·Á¼°¤ò°·¤¦¥æ¡¼¥Æ¥£¥ê¥Æ¥£
 Summary(pl):	Narzêdzia do obróbki plików z Macintosha
 Summary(pt_BR):	Utilitários para manipulação de arquivos no formato MacIntosh (Apple)
 Summary(tr):	Macintosh tipi dosyalarý iþlemek için araçlar
@@ -36,6 +37,13 @@ hexbin y binhex .
 C'est un ensemble d'utilitaires pour manipuler des fichiers provenant
 de Macintosh. Des utilitaires populaires comme macunpack, hexbin, et
 binhex sont inclus.
+
+%description -l ja
+macutils ¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ï, Macintosh ¤Ç°ìÈÌÅª¤ËÍøÍÑ¤µ¤ì¤Æ¤¤¤ë
+¥Õ¥¡¥¤¥ë·Á¼°¤ò°·¤¦¥æ¡¼¥Æ¥£¥ê¥Æ¥£¤¬¼ý¤á¤é¤ì¤Æ¤¤¤Þ¤¹.
+Îã¤¨¤Ð binhex, hexbin, macunpack ¤Ê¤É¤¬¼ýÏ¿¤µ¤ì¤Æ¤¤¤Þ¤¹.
+Macintosh ¤Î¥Õ¥¡¥¤¥ë·Á¼°¤ò»È¤¦É¬Í×¤¬¤¢¤ì¤Ð macutils ¥Ñ¥Ã¥±¡¼¥¸¤ò
+¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ²¼¤µ¤¤.
 
 %description -l pl
 Pakiet macutils zawiera zestaw narzêdzi do obróbki plików powszechnie
