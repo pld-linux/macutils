@@ -8,7 +8,7 @@ Summary(tr):	Macintosh tipi dosyalarý iþlemek için araçlar
 Name:		macutils
 Version:	2.0b3
 Release:	18
-License:	Distributable
+License:	distributable
 Group:		Applications/File
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}.tar.gz
 Patch0:		%{name}-misc.patch
