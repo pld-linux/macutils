@@ -6,7 +6,7 @@ Copyright: disributable
 Group: Applications/System
 Source: ftp://sunsite.unc.edu/pub/Linux/utils/compress/macutils.tar.gz
 Patch: macutils-misc.patch
-BuildRoot: /var/tmp/macutils-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The macutils package includes a set of utilities for manipulating
