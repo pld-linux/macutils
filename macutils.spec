@@ -10,8 +10,6 @@ Version:	2.0b3
 Release:	18
 License:	disributable
 Group:		Applications/File
-Group(de):	Applikationen/Datei
-Group(pl):	Aplikacje/Pliki
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}.tar.gz
 Patch0:		%{name}-misc.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
