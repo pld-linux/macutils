@@ -1,7 +1,7 @@
 Summary: Utilities for manipulating Macintosh file formats.
 Name: macutils
 Version: 2.0b3
-Release: 12
+Release: 14
 Copyright: disributable
 Group: Applications/System
 Source: ftp://sunsite.unc.edu/pub/Linux/utils/compress/macutils.tar.gz
@@ -25,29 +25,20 @@ by Macintosh machines.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/{bin,man/man1}
+mkdir -p $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-%{__make} BINDIR=$RPM_BUILD_ROOT/usr/bin install
-cp man/* $RPM_BUILD_ROOT/usr/man/man1
+install macunpack/macunpack		$RPM_BUILD_ROOT%{_bindir}
+install hexbin/hexbin			$RPM_BUILD_ROOT%{_bindir}
+install mixed/{macsave,macstream}	$RPM_BUILD_ROOT%{_bindir}
+install binhex/binhex			$RPM_BUILD_ROOT%{_bindir}
+install comm/{tomac,frommac}		$RPM_BUILD_ROOT%{_bindir}
+cp man/* $RPM_BUILD_ROOT/%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc README
-/usr/bin/macunpack
-/usr/bin/hexbin
-/usr/bin/macsave
-/usr/bin/macstream
-/usr/bin/binhex
-/usr/bin/tomac
-/usr/bin/frommac
-/usr/man/man1/binhex.1
-/usr/man/man1/frommac.1
-/usr/man/man1/hexbin.1
-/usr/man/man1/macsave.1
-/usr/man/man1/macstream.1
-/usr/man/man1/macunpack.1
-/usr/man/man1/macutil.1
-/usr/man/man1/tomac.1
+%defattr(644,root,root,755)
+%doc README doc/*
+%attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
