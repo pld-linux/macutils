@@ -27,7 +27,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/usr/{bin,man/man1}
 
-make BINDIR=$RPM_BUILD_ROOT/usr/bin install
+%{__make} BINDIR=$RPM_BUILD_ROOT/usr/bin install
 cp man/* $RPM_BUILD_ROOT/usr/man/man1
 
 %clean
