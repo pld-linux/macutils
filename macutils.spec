@@ -2,7 +2,7 @@ Summary:	Utilities for manipulating Macintosh file formats
 Summary(de):	Dienstprogramme zum Bearbeiten von Macintosh-Dateiformaten
 Summary(es):	Utilitarios para manipulación de archivos en formato MacIntosh (Apple)
 Summary(fr):	Utilitaires pour manipuler les fichiers au format Macintosh
-Summary(pl):	Narzêdzia do obróbki plików plików z Macintosha
+Summary(pl):	Narzêdzia do obróbki plików z Macintosha
 Summary(pt_BR):	Utilitários para manipulação de arquivos no formato MacIntosh (Apple)
 Summary(tr):	Macintosh tipi dosyalarý iþlemek için araçlar
 Name:		macutils
