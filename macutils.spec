@@ -7,7 +7,7 @@ Summary(pt_BR):	Utilitários para manipulação de arquivos no formato MacIntosh (A
 Summary(tr):	Macintosh tipi dosyalarý iþlemek için araçlar
 Name:		macutils
 Version:	2.0b3
-Release:	18
+Release:	19
 License:	distributable
 Group:		Applications/File
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}.tar.gz
