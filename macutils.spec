@@ -11,6 +11,7 @@ Release:	18
 License:	distributable
 Group:		Applications/File
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}.tar.gz
+# Source0-md5:	4ff71b1634ea503398c33994458fbe40
 Patch0:		%{name}-misc.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
