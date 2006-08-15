@@ -1,0 +1,11 @@
+--- macutils/hexbin/buffer.c~	1993-10-02 21:16:00.000000000 +0100
++++ macutils/hexbin/buffer.c	2004-06-08 04:44:10.318318994 +0200
+@@ -3,7 +3,7 @@
+ #include "buffer.h"
+ #include "../fileio/wrfile.h"
+ 
+-extern char *malloc();
++/*extern char *malloc();*/
+ extern char *realloc();
+ extern void exit();
+ 

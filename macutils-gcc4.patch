@@ -1,0 +1,356 @@
+--- macutils/comm/tomac.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/comm/tomac.c	2005-10-17 19:01:15.139752570 +0200
+@@ -5,7 +5,7 @@
+ #include "../util/patchlevel.h"
+ #include "globals.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ extern char *strcat();
+ extern void exit();
+--- macutils/comm/tty.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/comm/tty.c	2005-10-17 19:02:13.948298980 +0200
+@@ -6,6 +6,7 @@
+ #include <termios.h>
+ #endif /* TERMIOS_H */
+ #include <setjmp.h>
++#include <stdlib.h>
+ #include "../util/masks.h"
+ #include "protocol.h"
+ #include "globals.h"
+--- macutils/comm/frommac.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/comm/frommac.c	2005-10-17 19:05:43.041224243 +0200
+@@ -1,10 +1,12 @@
+ #include <stdio.h>
++#include <string.h>
+ #include "comm.h"
+ #include "../util/patchlevel.h"
+ #include "../fileio/machdr.h"
+ #include "globals.h"
+ #include "../fileio/fileglob.h"
+ #include "../fileio/wrfile.h"
++#include "../fileio/wrfileopt.h"
+ 
+ #define LOCALOPT	"lmxyzoTVH"
+ 
+--- macutils/binhex/binhex.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/binhex/binhex.c	2005-10-17 18:59:15.552632911 +0200
+@@ -3,7 +3,7 @@
+ #include "../fileio/rdfile.h"
+ #include "../util/patchlevel.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ extern char *strcat();
+ extern void exit();
+--- macutils/binhex/dofile.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/binhex/dofile.c	2005-10-17 19:00:27.370306789 +0200
+@@ -1,6 +1,8 @@
+ #include "../fileio/machdr.h"
+ #include "../fileio/rdfile.h"
+ 
++#include <stdio.h>
++
+ extern int dorep;
+ extern unsigned long binhex_crcinit;
+ extern unsigned long binhex_updcrc();
+--- macutils/mixed/macstream.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/mixed/macstream.c	2005-10-17 18:57:00.117350808 +0200
+@@ -4,7 +4,7 @@
+ #include "../fileio/rdfileopt.h"
+ #include "../util/patchlevel.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ extern char *strcat();
+ extern void exit();
+--- macutils/mixed/dir.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/mixed/dir.c	2005-10-17 18:58:10.655019678 +0200
+@@ -4,7 +4,7 @@
+ #include "../util/util.h"
+ #include "../util/masks.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ 
+ static char *dir_stack;
+--- macutils/hexbin/globals.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/hexbin/globals.h	2005-10-17 18:55:40.730638680 +0200
+@@ -13,7 +13,7 @@
+ extern char info[];
+ extern char trname[];
+ 
+-typedef struct macheader {
++struct macheader {
+ 	char m_name[128];
+ 	char m_type[4];
+ 	char m_author[4];
+--- macutils/macunpack/lzh.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/lzh.c	2005-10-17 17:22:40.737476791 +0200
+@@ -17,13 +17,13 @@
+ #define LZSMASK		4095
+ #define LZBUFFSIZE	8192	/* Max of above buffsizes */
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ extern void de_lzah();
+ extern unsigned char (*lzah_getbyte)();
+ extern void de_lzh();
+ 
+-typedef struct methodinfo {
++struct methodinfo {
+ 	char *name;
+ 	int number;
+ };
+--- macutils/macunpack/lzh.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/lzh.h	2005-10-17 17:22:25.384338423 +0200
+@@ -30,7 +30,7 @@
+ #define L_EEXTENDSZ	0
+ #define L_EEXTEND	1
+ 
+-typedef struct fileHdr { /* 58 bytes */
++struct fileHdr { /* 58 bytes */
+ 	unsigned char	hsize;
+ 	unsigned char	hcrc;
+ 	char		method[5];
+@@ -58,10 +58,3 @@
+ #define	lz5	7
+ #define	lzs	8
+ 
+-extern char *lzh_pointer;
+-extern char *lzh_data;
+-extern char *lzh_finfo;
+-extern int lzh_fsize;
+-extern int lzh_kind;
+-extern char *lzh_file;
+-
+--- macutils/macunpack/dd.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/dd.c	2005-10-17 17:23:45.852063421 +0200
+@@ -9,7 +9,7 @@
+ #include "../util/masks.h"
+ #include "../util/util.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ extern char *strcpy();
+ extern char *strncpy();
+@@ -45,7 +45,7 @@
+ #endif /* UNTESTED */
+ static void dd_cpt_compat();
+ 
+-typedef struct methodinfo {
++struct methodinfo {
+ 	char *name;
+ 	int number;
+ };
+--- macutils/macunpack/zma.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/zma.h	2005-10-17 17:21:24.030785289 +0200
+@@ -20,7 +20,7 @@
+ #define	Z_RCRC		44	/* Resource crc */
+ #define	Z_FNAME		46	/* File name length and name */
+ 
+-typedef struct fileHdr {		/* 78 bytes */
++struct fileHdr {			/* 78 bytes */
+ 	char		deleted;	/* Not in original, split off from: */
+ 	char		what;		/* What kind?  Negative if deleted */
+ 	unsigned char	hlen ;		/* Header length */
+--- macutils/macunpack/dir.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/dir.c	2005-10-17 17:15:34.502632084 +0200
+@@ -4,7 +4,7 @@
+ #include "../util/util.h"
+ #include "../util/masks.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ 
+ static char *dir_stack;
+--- macutils/macunpack/sit.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/sit.h	2005-10-17 17:16:33.056157723 +0200
+@@ -24,7 +24,7 @@
+ 
+ typedef long OSType;
+ 
+-typedef struct sitHdr {			/* 22 bytes */
++struct sitHdr {				/* 22 bytes */
+ 	OSType	signature;		/* = 'SIT!' -- for verification */
+ 	unsigned short	numFiles;	/* number of files in archive */
+ 	unsigned long	arcLength;	/* length of entire archive incl.
+@@ -34,7 +34,7 @@
+ 	char reserved[7];
+ };
+ 
+-typedef struct fileHdr {		/* 112 bytes */
++struct fileHdr {			/* 112 bytes */
+ 	unsigned char	compRMethod;	/* rsrc fork compression method */
+ 	unsigned char	compDMethod;	/* data fork compression method */
+ 	unsigned char	fName[64];	/* a STR63 */
+--- macutils/macunpack/sit.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/sit.c	2005-10-17 17:17:00.042401721 +0200
+@@ -19,7 +19,7 @@
+ extern void de_lzah();
+ extern unsigned char (*lzah_getbyte)();
+ 
+-typedef struct methodinfo {
++struct methodinfo {
+ 	char *name;
+ 	int number;
+ };
+--- macutils/macunpack/cpt.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/cpt.c	2005-10-17 17:20:35.030343304 +0200
+@@ -21,7 +21,7 @@
+ #define ESC1SEEN	1
+ #define ESC2SEEN	2
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ extern int free();
+ 
+--- macutils/macunpack/dd.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/dd.h	2005-10-17 17:23:24.921874893 +0200
+@@ -52,7 +52,7 @@
+ 
+ typedef long OSType;
+ 
+-typedef struct fileHdr {		/* 124 bytes */
++struct fileHdr {			/* 124 bytes */
+ 	unsigned char	magic[4];	/* "DDAR" */
+ 	unsigned char	fill1[4];	/* ??? */
+ 	unsigned char	fName[64];	/* a STR63 */
+@@ -73,7 +73,7 @@
+ 	unsigned short	hdrcrc;		/* true crc */
+ };
+ 
+-typedef struct fileCHdr {		/* 84 bytes */
++struct fileCHdr {			/* 84 bytes */
+ 	unsigned char	magic[4];	/* "\253\315\000\124" */
+ 	unsigned long	dataLength;	/* lengths */
+ 	unsigned long	dataCLength;
+--- macutils/macunpack/jdw.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/jdw.h	2005-10-17 17:17:49.569849364 +0200
+@@ -8,7 +8,7 @@
+ #define	J_MTIME		34
+ #define	J_FLENGTH	38
+ 
+-typedef struct fileHdr {
++struct fileHdr {
+ 	char		magic[6];
+ 	unsigned long	type;
+ 	unsigned long	auth;
+--- macutils/macunpack/stf.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/stf.h	2005-10-17 17:18:14.276072588 +0200
+@@ -5,7 +5,7 @@
+ #define	S_RSRCLNGTH	3	/* + NAMELENGTH */
+ #define	S_DATALNGTH	7	/* + NAMELENGTH */
+ 
+-typedef struct fileHdr {
++struct fileHdr {
+ 	char		magic[3];
+ 	char		flength;
+ 	char		fname[32];	/* actually flength */
+--- macutils/macunpack/dia.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/dia.c	2005-10-17 17:18:45.596355498 +0200
+@@ -9,7 +9,7 @@
+ #include "../fileio/kind.h"
+ #include "../util/util.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ 
+ static unsigned char *dia_archive;
+--- macutils/macunpack/lzc.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/lzc.h	2005-10-17 17:19:29.172748959 +0200
+@@ -12,7 +12,7 @@
+ #define C_AUTHOFF	36
+ #define C_FLAGOFF	40
+ 
+-typedef struct fileHdr {
++struct fileHdr {
+ 	unsigned long	magic1;
+ 	unsigned long	dataLength;
+ 	unsigned long	dataCLength;
+--- macutils/macunpack/zma.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/zma.c	2005-10-17 17:21:54.337058556 +0200
+@@ -9,7 +9,7 @@
+ #include "../util/masks.h"
+ #include "../util/util.h"
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+ extern void de_lzh();
+ 
+--- macutils/macunpack/cpt.h.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/macunpack/cpt.h	2005-10-17 17:20:10.952126046 +0200
+@@ -31,7 +31,7 @@
+ 
+ typedef long	OSType;
+ 
+-typedef struct cptHdr {			/* 8 bytes */
++struct cptHdr {				/* 8 bytes */
+ 	unsigned char	signature;	/* = 1 -- for verification */
+ 	unsigned char	volume;		/* for multi-file archives */
+ 	unsigned short	xmagic;		/* verification multi-file consistency*/
+@@ -42,7 +42,7 @@
+ 	unsigned char	commentsize;	/* number of bytes comment that follow*/
+ };
+ 
+-typedef struct fileHdr {		/* 78 bytes */
++struct fileHdr {			/* 78 bytes */
+ 	unsigned char	fName[32];	/* a STR32 */
+ 	unsigned char	folder;		/* set to 1 if a folder */
+ 	unsigned short	foldersize;	/* number of entries in folder */
+--- macutils/fileio/wrfile.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/fileio/wrfile.c	2005-10-17 17:31:51.870431805 +0200
+@@ -4,6 +4,7 @@
+ #include <sys/stat.h>
+ #include <ctype.h>
+ #include <stdio.h>
++#include <string.h>
+ #include "machdr.h"
+ #include "wrfile.h"
+ #include "wrfileopt.h"
+@@ -35,11 +36,8 @@
+ #define MACI 9
+ #endif /* SCAN */
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+-extern char *strcpy();
+-extern char *strncpy();
+-extern char *strcat();
+ extern void exit();
+ 
+ #ifdef UNDEF /* Do not declare sprintf; not portable (but lint will complain) */
+--- macutils/fileio/rdfile.c.bak	1993-10-02 21:16:00.000000000 +0100
++++ macutils/fileio/rdfile.c	2005-10-17 17:32:48.087935990 +0200
+@@ -2,6 +2,7 @@
+ #ifdef TYPES_H
+ #include <sys/types.h>
+ #endif /* TYPES_H */
++#include <string.h>
+ #include <sys/stat.h>
+ #include "machdr.h"
+ #include "rdfile.h"
+@@ -42,11 +43,8 @@
+ #define RSRC_FORMAT	2
+ #define UNIX_FORMAT	3
+ 
+-extern char *malloc();
++extern void* malloc(size_t);
+ extern char *realloc();
+-extern char *strcpy();
+-extern char *strncpy();
+-extern char *strcat();
+ extern void exit();
+ 
+ static void check_files();
