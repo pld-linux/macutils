@@ -14,6 +14,8 @@ Group:		Applications/File
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}.tar.gz
 # Source0-md5:	4ff71b1634ea503398c33994458fbe40
 Patch0:		%{name}-misc.patch
+Patch1:		%{name}-gcc3.4.patch
+Patch2:		%{name}-gcc4.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -62,6 +64,8 @@ olarak kullanýlan programlarý içermektedir.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__make}
