@@ -1,11 +1,11 @@
 Summary:	Utilities for manipulating Macintosh file formats
-Summary(de):	Dienstprogramme zum Bearbeiten von Macintosh-Dateiformaten
-Summary(es):	Utilitarios para manipulación de archivos en formato MacIntosh (Apple)
-Summary(fr):	Utilitaires pour manipuler les fichiers au format Macintosh
-Summary(ja):	Macintosh ¤Î¥Õ¥¡¥¤¥ë·Á¼°¤ò°·¤¦¥æ¡¼¥Æ¥£¥ê¥Æ¥£
-Summary(pl):	Narzêdzia do obróbki plików z Macintosha
-Summary(pt_BR):	Utilitários para manipulação de arquivos no formato MacIntosh (Apple)
-Summary(tr):	Macintosh tipi dosyaları işlemek için araçlar
+Summary(de.UTF-8):   Dienstprogramme zum Bearbeiten von Macintosh-Dateiformaten
+Summary(es.UTF-8):   Utilitarios para manipulaciÃ³n de archivos en formato MacIntosh (Apple)
+Summary(fr.UTF-8):   Utilitaires pour manipuler les fichiers au format Macintosh
+Summary(ja.UTF-8):   Macintosh ã®ãƒ•ã‚¡ã‚¤ãƒ«å½¢å¼ã‚’æ‰±ã†ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£
+Summary(pl.UTF-8):   NarzÄ™dzia do obrÃ³bki plikÃ³w z Macintosha
+Summary(pt_BR.UTF-8):   UtilitÃ¡rios para manipulaÃ§Ã£o de arquivos no formato MacIntosh (Apple)
+Summary(tr.UTF-8):   Macintosh tipi dosyalarÄ± iÅŸlemek iÃ§in araÃ§lar
 Name:		macutils
 Version:	2.0b3
 Release:	19
@@ -26,40 +26,40 @@ utilities like binhex, hexbin, macunpack, etc.
 Install macutils if you need to manipulate files that are commonly
 used by Macintosh machines.
 
-%description -l de
+%description -l de.UTF-8
 Dies ist eine Reihe von Dienstprogramme zum Bearbeiten von
 Macintosh-Dateien. Enthalten sind u.a.: macunpack, hexbin und binhex.
 
-%description -l es
-Este es un conjunto de utilitarios para la manipulación de archivos
-del Macintosh. Están incluidos utilitarios populares como macunpack,
+%description -l es.UTF-8
+Este es un conjunto de utilitarios para la manipulaciÃ³n de archivos
+del Macintosh. EstÃ¡n incluidos utilitarios populares como macunpack,
 hexbin y binhex .
 
-%description -l fr
+%description -l fr.UTF-8
 C'est un ensemble d'utilitaires pour manipuler des fichiers provenant
 de Macintosh. Des utilitaires populaires comme macunpack, hexbin, et
 binhex sont inclus.
 
-%description -l ja
-macutils ¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ï, Macintosh ¤Ç°ìÈÌÅª¤ËÍøÍÑ¤µ¤ì¤Æ¤¤¤ë
-¥Õ¥¡¥¤¥ë·Á¼°¤ò°·¤¦¥æ¡¼¥Æ¥£¥ê¥Æ¥£¤¬¼ı¤á¤é¤ì¤Æ¤¤¤Ş¤¹.
-Îã¤¨¤Ğ binhex, hexbin, macunpack ¤Ê¤É¤¬¼ıÏ¿¤µ¤ì¤Æ¤¤¤Ş¤¹.
-Macintosh ¤Î¥Õ¥¡¥¤¥ë·Á¼°¤ò»È¤¦É¬Í×¤¬¤¢¤ì¤Ğ macutils ¥Ñ¥Ã¥±¡¼¥¸¤ò
-¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ²¼¤µ¤¤.
+%description -l ja.UTF-8
+macutils ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«ã¯, Macintosh ã§ä¸€èˆ¬çš„ã«åˆ©ç”¨ã•ã‚Œã¦ã„ã‚‹
+ãƒ•ã‚¡ã‚¤ãƒ«å½¢å¼ã‚’æ‰±ã†ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ãŒåã‚ã‚‰ã‚Œã¦ã„ã¾ã™.
+ä¾‹ãˆã° binhex, hexbin, macunpack ãªã©ãŒåéŒ²ã•ã‚Œã¦ã„ã¾ã™.
+Macintosh ã®ãƒ•ã‚¡ã‚¤ãƒ«å½¢å¼ã‚’ä½¿ã†å¿…è¦ãŒã‚ã‚Œã° macutils ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’
+ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ä¸‹ã•ã„.
 
-%description -l pl
-Pakiet macutils zawiera zestaw narzêdzi do obróbki plików powszechnie
-u¿ywanych na Macintoshach. Zawiera binhex, hexbin, macunpack itp.
+%description -l pl.UTF-8
+Pakiet macutils zawiera zestaw narzÄ™dzi do obrÃ³bki plikÃ³w powszechnie
+uÅ¼ywanych na Macintoshach. Zawiera binhex, hexbin, macunpack itp.
 
-%description -l pt_BR
-Este é um conjunto de utilitários para manipulação de arquivos do
-Macintosh. Utilitários populares como macunpack, hexbin e binhex estão
-incluídos.
+%description -l pt_BR.UTF-8
+Este Ã© um conjunto de utilitÃ¡rios para manipulaÃ§Ã£o de arquivos do
+Macintosh. UtilitÃ¡rios populares como macunpack, hexbin e binhex estÃ£o
+incluÃ­dos.
 
-%description -l tr
-Bu pakette Macintosh dosyalarının işlenmesinde kullanılabilecek
-araçlar yer almaktadır. Paket macunpack, hexbin ve binhex gibi yaygın
-olarak kullanılan programları içermektedir.
+%description -l tr.UTF-8
+Bu pakette Macintosh dosyalarÄ±nÄ±n iÅŸlenmesinde kullanÄ±labilecek
+araÃ§lar yer almaktadÄ±r. Paket macunpack, hexbin ve binhex gibi yaygÄ±n
+olarak kullanÄ±lan programlarÄ± iÃ§ermektedir.
 
 %prep
 %setup -q -n %{name}
