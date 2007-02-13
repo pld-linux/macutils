@@ -1,11 +1,11 @@
 Summary:	Utilities for manipulating Macintosh file formats
-Summary(de.UTF-8):   Dienstprogramme zum Bearbeiten von Macintosh-Dateiformaten
-Summary(es.UTF-8):   Utilitarios para manipulación de archivos en formato MacIntosh (Apple)
-Summary(fr.UTF-8):   Utilitaires pour manipuler les fichiers au format Macintosh
-Summary(ja.UTF-8):   Macintosh のファイル形式を扱うユーティリティ
-Summary(pl.UTF-8):   Narzędzia do obróbki plików z Macintosha
-Summary(pt_BR.UTF-8):   Utilitários para manipulação de arquivos no formato MacIntosh (Apple)
-Summary(tr.UTF-8):   Macintosh tipi dosyaları işlemek için araçlar
+Summary(de.UTF-8):	Dienstprogramme zum Bearbeiten von Macintosh-Dateiformaten
+Summary(es.UTF-8):	Utilitarios para manipulación de archivos en formato MacIntosh (Apple)
+Summary(fr.UTF-8):	Utilitaires pour manipuler les fichiers au format Macintosh
+Summary(ja.UTF-8):	Macintosh のファイル形式を扱うユーティリティ
+Summary(pl.UTF-8):	Narzędzia do obróbki plików z Macintosha
+Summary(pt_BR.UTF-8):	Utilitários para manipulação de arquivos no formato MacIntosh (Apple)
+Summary(tr.UTF-8):	Macintosh tipi dosyaları işlemek için araçlar
 Name:		macutils
 Version:	2.0b3
 Release:	19
